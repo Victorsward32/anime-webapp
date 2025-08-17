@@ -1,0 +1,47 @@
+[data-component="StreamingCards"] {
+  .StreamingCard1 {
+    font-size: 16px;
+    min-height: 16em;
+    max-width: 14em;
+    padding: 0.8em;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+  .StreamingCard2 {
+    font-size: 16px;
+    min-height: 16em;
+    max-width: 14em;
+    // padding: 0.8em;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: #000508;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 5, 8, 0.76) 0%,
+      rgba(8, 21, 69, 0.72) 50%,
+      rgba(13, 58, 102, 0.76) 100%
+    );
+  }
+  .image {
+    height: 200px;
+    border-radius: 100%;
+    // object-fit: contain;
+  }
+  .squre-image {
+    height: 200px;
+    // border-radius: 100%;
+  }
+  .description {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    padding: 0.4em;
+    background: #00050864;
+    background: linear-gradient(
+      90deg,
+      rgba(0, 5, 8, 0.76) 0%,
+      rgba(8, 21, 69, 0.72) 50%,
+      rgba(13, 58, 102, 0.76) 100%
+    );
+  }
+}

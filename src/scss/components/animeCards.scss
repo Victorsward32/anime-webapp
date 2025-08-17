@@ -1,0 +1,95 @@
+@use '../abstracts' as *;
+
+[data-component="AnimeCard"] {
+  background-color: rgba(57, 56, 56, 0.321);
+  @include px-to-rem(width, 160);
+  @include px-to-rem(height, 260);
+  @include display-center(column);
+  overflow: hidden;
+
+  .Image-container {
+    position: relative;
+    @include px-to-rem(width, 160);
+    @include px-to-rem(height, 200);
+    overflow: hidden;
+
+    .anime-poster {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #ff004c41;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1em;
+      opacity: 0; 
+      transition: opacity 0.3s ease-in-out;
+
+      .squareImg {
+        height: 60px;
+        width: 60px;
+        color: white;
+      }
+
+      span {
+        color: white;
+        font-size: 1em;
+        font-weight: 600;
+        line-height: 100%;
+      }
+    }
+
+    &:hover .overlay {
+      opacity: 1;
+    }
+  }
+
+  .animeDescription {
+    font-size: 12px;
+    color: white;
+    text-align: center;
+    margin-top: 0.5em;
+
+    height: 3em;  
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; // max 2 lines
+    -webkit-box-orient: vertical;
+  }
+
+  .rating-contianer {
+    text-align: center;
+    padding-bottom: 0.5em;
+  }
+
+  .star {
+    font-size: 1.2em;
+    margin-right: 2px;
+
+    &.full {
+      color: #ff004c;
+    }
+
+    &.half {
+      background: linear-gradient(90deg, #ff004c 50%, #555 50%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &.empty {
+      color: #555;
+    }
+  }
+}

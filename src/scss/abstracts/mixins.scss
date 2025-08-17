@@ -1,0 +1,56 @@
+@use '../abstracts/variables.scss' as abs;
+
+@mixin px-to-rem($property,$value){
+    #{$property}:($value/16)+rem;
+}
+
+// mixins for display flex
+@mixin display-center($direction){
+display: flex;
+flex-direction: $direction;
+justify-content: center;
+align-items: center;
+}
+
+//mixins for  Text
+@mixin titleText($color){
+    color: $color;
+    @include px-to-rem(font-size,24 );
+    font-weight: 900;
+    line-height: 100%;
+}
+
+@mixin subtitleText($color){
+    @include px-to-rem(font-size,18 );
+    color:$color;
+    font-weight: 600;
+    line-height: 100%;
+}
+
+@mixin normalText($color,$fontSize,$fontWeight){
+     @include px-to-rem(font-size,$fontSize );
+     color:$color ;
+     font-weight: $fontWeight;
+     line-height: 100%;
+}
+//
+
+// mixins for media query
+
+@mixin mobile_devices{
+    @media (max-width:600px) {
+        @content;
+    }
+}
+
+@mixin tablet_devices{
+    @media (min-width:600px) {
+        @content;
+    }
+}
+
+@mixin tablet_devices_landscape{
+    @media (max-width:900px) {
+        @content;
+    }
+}

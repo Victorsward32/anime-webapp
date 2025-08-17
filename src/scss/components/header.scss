@@ -1,0 +1,99 @@
+@use "../abstracts" as *;
+[data-component="header"] {
+  @include display-center(row);
+  position: sticky;
+  width: 100%;
+  z-index: 50;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  .header-container {
+    @include display-center(row);
+    justify-content: space-between;
+    min-width: 80%;
+    @include px-to-rem(height, 64);
+    @include px-to-rem(padding-left, 1);
+    @include px-to-rem(padding-right, 1);
+    @include px-to-rem(gap,10);
+    .logo-container {
+      padding: 0.6em;
+      & label {
+        @include titleText($dark_title_txt);
+        text-decoration: none;
+      }
+    }
+    .nav-container {
+      gap: 1em;
+      @include display-center(row);
+      flex-wrap: nowrap;
+    }
+    .header-hamburger {
+      position: relative;
+      display: none;
+    }
+    .header-mobile-menue {
+      position: absolute;
+      top: 50%;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+    .search-container {
+      @include display-center(row);
+      background-color: rgba(128, 128, 128, 0.456);
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      padding-top: 0.3em;
+      padding-bottom: 0.3em;
+      width: 30%;
+      @include px-to-rem(gap,5);
+      @include px-to-rem(border-radius, 12);
+      .search-icon {
+        height: 20px;
+        width: 20px;
+        object-fit: contain;
+      }
+      .search-input {
+        background-color: transparent;
+        width: 100%;
+        outline: #ed1c5b00 !important;
+        fill: none !important;
+        border: none;
+        padding-left: 0.4em;
+        @include normalText(white,12,600);
+      }
+      .search-input::placeholder {
+        color: rgba(132, 129, 129, 0.524);
+      }
+      .search-input:focus,
+      .search-input:active {
+        background: transparent;
+      }
+    }
+  }
+
+  @include mobile_devices {
+    .header-container {
+      @include px-to-rem(height, 34);
+      padding: 0.5em;
+      min-width: 100%;
+      .logo-container {
+        display: flex;
+        min-width: 10%;
+        & label {
+          @include titleText($dark_title_txt);
+          text-decoration: none;
+          font-size: 1.3em;
+          text-align: center;
+        }
+      }
+      .nav-container {
+        display: none;
+      }
+      .header-hamburger {
+        display: block;
+        @include px-to-rem(max-width, 30);
+        @include px-to-rem(max-height, 30);
+        @include display-center(row);
+        border: 0.4px solid white;
+      }
+    }
+  }
+}

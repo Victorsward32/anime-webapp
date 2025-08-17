@@ -1,0 +1,23 @@
+@use '../abstracts' as *;
+[data-component="DropDownComponent"] {
+  &.dropDown {
+    color: white;
+    
+  }
+  .select-container {
+    min-height: 2em;
+    max-width: 10em;
+    background-color: transparent;
+    border: 1px solid #ed1c5b;
+    outline: #ed1c5b;
+    padding: 0.2em;
+    position: relative;
+    border-radius: 5px;
+    @include normalText($dark_title_txt,10,600);
+  }
+  .options {
+    position: absolute;
+    @include normalText($dark_title_txt,10,600);
+    background-color: $dark_title_txt;
+  }
+}

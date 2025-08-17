@@ -1,0 +1,108 @@
+@use "../abstracts" as *;
+
+[data-component="bannerSlider"] {
+  @include display-center(column);
+  position: relative;
+  width: 100%;
+
+  .banner-container {
+    width: 80%;
+    padding: 1em;
+    margin: 0.4em;
+    @include px-to-rem(border-radius, 5);
+    @include display-center(column);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    @include px-to-rem(min-height, 400);
+    transition: opacity 0.5s ease-in-out;
+
+    // Hide inactive slides
+    &.inactive {
+      display: none;
+    }
+
+    // Show active slide
+    &.active {
+      display: flex;
+    }
+
+    // Overlay styles
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.4); 
+      z-index: 1;
+    }
+
+    .description-container {
+      @include display-center(row);
+      width: 80%;
+      justify-content: space-between;
+      padding: 1em;
+      position: relative;
+      z-index: 2; // Make sure content is above overlay
+
+      .description-wrapper {
+        @include display-center(column);
+        align-items: flex-start;
+        padding: 1em;
+        gap: 1em;
+        
+        & label {
+          @include titleText($dark_white);
+        }
+        
+        & label:nth-child(2) {
+          @include subtitleText($dark_white);
+                }
+      }
+
+      .watch-Btn {
+        @include normalText($dark_white, 12, 900);
+        background-color: $dark_title_txt;
+        padding: 0.8em 1.5em;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        position: relative;
+        z-index: 2; 
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+
+  .dots-container {
+    @include display-center(row);
+    gap: 0.5em;
+    margin-top: 1em;
+    position: absolute;
+    bottom: 20px;
+    z-index: 2;
+
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active-dot {
+        background-color: $dark_title_txt;
+      }
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}

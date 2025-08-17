@@ -1,0 +1,155 @@
+@use '../abstracts/' as *;
+[data-component="AnimeDetails"] {
+  font-size: 16px;
+  color: white;
+  .banner {
+    display: flex;
+    min-height: 40em;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-blend-mode: multiply;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    position: relative;
+  }
+  .banner::before {
+    content: "";
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+  }
+  .itemsContainer {
+    // max-width: 1000px;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    position: absolute;
+    z-index: 4;
+  }
+  .item-image {
+    max-height: 20em;
+    max-width: 16em;
+    object-fit: cover;
+  }
+  .item-title {
+    font-size: 3em;
+    color: white;
+    font-weight: bold;
+    line-height: 100%;
+  }
+  .item-description {
+    font-size: 1em;
+    margin: 0;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+  .item-Details-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .table-container {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    margin-top: 1em;
+    align-items: center;
+    justify-content: center;
+    padding: 1em;
+    .attribute-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      .attribute {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        // flex-wrap: nowrap;
+        & span {
+          font-size: 1.3em;
+          font-weight: 700;
+          line-height: 1;
+          text-align: left;
+          margin-bottom: 1em;
+        }
+        span:nth-child(2) {
+          font-size: 1em;
+          font-weight: 300;
+          line-height: 1;
+        }
+      }
+    }
+  }
+
+  .streaming-container {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+    .character-section {
+      display: flex;
+      overflow-x: auto;
+    }
+    .card-container {
+      display: flex;
+      min-width: 16em;
+      max-height: 18em;
+      margin-bottom: 1em;
+    }
+  }
+  .episodes-container {
+    display: flex;
+    padding: 2em;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 1em;
+    .video-container {
+      gap: 2em;
+      display: flex;
+      padding: 1em;
+
+      .left-contiainer {
+        max-width: 60%;
+        min-height: 600px;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .right-container {  
+    padding: 1em;
+    border: 1px solid white;
+    max-height: 700px;
+    overflow: hidden;
+    overflow-y: visible;
+
+      }
+    }
+  }
+  .section-title {
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+  }
+}

@@ -1,0 +1,23 @@
+$dark_Primary:#1A1A1A;
+$dark_secondary:#020916;
+$dark_title_txt:#FF004B;
+$dark_secondary:#656565;
+$dark_black:#0000;
+$dark_white:#ffff;
+$dark_grey:#808080;
+$dark_text_col:#656565;
+$dark_blackGrey_gradient: linear-gradient(360deg, #000000, #0b0b0b, #2e2e2e, #555555, #808080, #555555, #2e2e2e, #0b0b0b, #000000);
+$dark_blackBlue_gradient:linear-gradient(90deg,rgba(5, 3, 28, 1) 0%, rgba(2, 2, 59, 0.96) 50%);
+$dark_boxShadow: 0 0.5rem 1rem rgba($dark_black, 0.15) !default;
+
+$light_Primary:#1A1A1A;
+$light_secondary:#020916;
+$light_title_txt:#FF004B;
+$light_secondary:#656565;
+$light_black:#0000;
+$light_white:#ffff;
+$light_grey:#808080;
+$light_text_col:#656565;
+$light_blackGrey_gradient: linear-gradient(360deg, #000000, #0b0b0b, #2e2e2e, #555555, #808080, #555555, #2e2e2e, #0b0b0b, #000000);
+$light_blackBlue_gradient:linear-gradient(90deg,rgba(5, 3, 28, 1) 0%, rgba(2, 2, 59, 0.96) 50%);
+$light_boxShadow: 0 0.5rem 1rem rgba($dark_black, 0.15) !default;
