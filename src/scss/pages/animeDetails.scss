@@ -1,4 +1,4 @@
-@use '../abstracts/' as *;
+@use "../abstracts/" as *;
 [data-component="AnimeDetails"] {
   font-size: 16px;
   color: white;
@@ -123,22 +123,22 @@
     gap: 1em;
     .video-container {
       gap: 2em;
-      display: flex;
       padding: 1em;
+      @include display-center(row);
 
-      .left-contiainer {
-        max-width: 60%;
-        min-height: 600px;
+      .left-container {
+        width: 60%;
+        height: 600px;
         background-repeat: no-repeat;
         background-size: cover;
+        background-position: center;
       }
-      .right-container {  
-    padding: 1em;
-    border: 1px solid white;
-    max-height: 700px;
-    overflow: hidden;
-    overflow-y: visible;
-
+      .right-container {
+        @include px-to-rem(padding,8);
+        width: 40%;
+        height: 600px;
+        overflow: hidden;
+        overflow-y: visible;
       }
     }
   }

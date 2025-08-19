@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+[data-component='StreamingDetails'] {
+  @include display-center(row);
+  justify-content: flex-start;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem;
+  gap: 1rem; 
+  scroll-behavior: smooth;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  /* Chrome scrollbar */
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #eee;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .card {
+    flex: 0 0 auto;     
+    padding: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}

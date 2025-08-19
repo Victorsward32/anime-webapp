@@ -7,7 +7,7 @@ const StreamingCard = ({ name, image, isCircle = false, role }) => {
     <div data-component="StreamingCards">
       {isCircle === true ? (
         <div className="StreamingCard1">
-          <img src={image} className="image" alt="" />
+          <img src={image} style={{objectFit:'contain'}} className="image" alt="" />
           <div className="description">
             <span>{name || "Name"}</span>
           </div>

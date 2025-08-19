@@ -1,0 +1,33 @@
+@use '../abstracts' as *;
+[data-components='MoreDetails']{
+    @include display-center(row);
+    @include px-to-rem(gap,10);
+    .left-container{
+        @include display-center(column); 
+        justify-content: flex-start;
+        width: 60%;
+        @include px-to-rem(gap,16);
+
+        .inner-container{
+            width: 100%;
+        }
+    }
+    .right-container{
+        width: 40%;
+        height: 400px;
+        background-color: $dark_secondary;
+        @include px-to-rem(gap,10);
+        @include px-to-rem(padding,10);
+        @include px-to-rem(border-radius,5);
+    }
+    .section-title {
+    font-size: 2em;
+    font-weight: 500;
+    line-height: 100%;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-color: red;
+    text-decoration-thickness: 3px;
+    text-underline-offset: 8px;
+  }
+}

@@ -1,0 +1,16 @@
+@use '../abstracts' as *;
+[data-component='Producers']{
+@include display-center(column);
+justify-content: flex-start;
+align-items: flex-start;
+
+ @include px-to-rem(margin-top, 10);
+.producer-txt{
+   @include px-to-rem(margin-bottom,5);
+    @include normalText(white,16,700);
+.inner-span{
+ @include normalText($dark_title_txt,8,700);
+ @include px-to-rem(margin-right,10)
+}
+}
+}

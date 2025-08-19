@@ -23,7 +23,7 @@
     );
   }
   .image {
-    height: 200px;
+    height: 150px;
     border-radius: 100%;
     // object-fit: contain;
   }
@@ -43,5 +43,6 @@
       rgba(8, 21, 69, 0.72) 50%,
       rgba(13, 58, 102, 0.76) 100%
     );
+    text-align: center;
   }
 }
